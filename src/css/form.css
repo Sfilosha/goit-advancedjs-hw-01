@@ -1,0 +1,36 @@
+.feedback-form {
+    color: #2E2F42;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+textarea {
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border: solid 1px #808080;
+    border-radius: 1px;
+}
+
+textarea:active {
+    border: solid 1px #808080;
+}
+
+input {
+    border: solid 1px #808080;
+    border-radius: 1px;
+    padding: 8px 16px;
+}
+
+input:active {
+    border: solid 1px #808080;
+}

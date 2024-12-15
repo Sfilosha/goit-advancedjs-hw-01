@@ -67,49 +67,32 @@ const images = [
 // Описаний в документації
 import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
+// import "simplelightbox/dist/simple-lightbox.min.css";
 
-// 1. Create Li item with an Images
-const createImage = ({preview, original, description}) => {
-    return `<li class="gallery-item">
-	<a class="gallery-link" href="#">
-		<img
-			class="gallery-image"
-			src="${preview}"
-            data-source="${original}"
-			alt="${description}"
-			/>
-	</a>
-</li>
-`
-};
-
-const createImageTemplate = pictureArr => { 
+// Images template
+const createImageTemplate = pictureArr => {
     return pictureArr.reduce((acc, el, idx, arr) => {
         return acc +
-        `<li class="gallery-item">
-            <a class="gallery-link" href="#">
+            `<li class="gallery-item">
+            <a class="gallery-link" href="${el.original}">
                 <img
                     class="gallery-image"
                     src="${el.preview}"
-                    data-source="${el.original}"
                     alt="${el.description}"
                     />
             </a>
         </li>`
     }, '')
-}
-
-// Collect all images into one gallery
-const galleryTemplate = images.map(el => createImage(el)).join('');
+};
 
 // Find and add generated gallery in HTML
 const galleryEl = document.querySelector(".js-gallery");
-galleryEl.innerHTML = galleryTemplate;
+galleryEl.innerHTML = createImageTemplate(images);
 
 // Open modal with an image
-let gallery = new SimpleLightbox('.js-gallery');
-gallery.on('show.simplelightbox', function () {
+let gallery = new SimpleLightbox('.js-gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
 });
 
 gallery.on('error.simplelightbox', function (e) {

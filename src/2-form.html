@@ -1,4 +1,26 @@
-<form>
-  <input type="text" name="query" placeholder="Search image..." />
-  <button type="button">Search</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1: Feedback Form</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script type="module" src="./js/2-form.js" defer></script>
+  </head>
+  <body>
+    <section class="container">
+      <form class="feedback-form" autocomplete="off">
+        <label class="form-label">
+          Email
+          <input type="email" name="email" />
+        </label>
+        <label class="form-label">
+          Message
+          <textarea name="message" rows="8"></textarea>
+        </label>
+        <button class="btn-primary" type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>

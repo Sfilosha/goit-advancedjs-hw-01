@@ -9,4 +9,9 @@
 @import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
+@import url('./buttons.css');
+
+/* Pages styles */
+@import url('./index.css');
 @import url('./gallery.css');
+@import url('./form.css');
