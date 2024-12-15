@@ -30,10 +30,12 @@ textarea {
     padding: 8px 16px;
     border: solid 1px #808080;
     border-radius: 1px;
+    resize: none;
+    height: 80px
 }
 
-textarea:active {
-    border: solid 1px #808080;
+textarea:focus {
+    border-color: #000;
 }
 
 input {
@@ -42,8 +44,8 @@ input {
     padding: 8px 16px;
 }
 
-input:active {
-    border: solid 1px #808080;
+input:focus {
+    border-color: #000;
 }
 
 form .btn-primary {
